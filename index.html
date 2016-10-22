@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app ="myModule">
+<head>
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Include main CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Include jQuery library -->
+    <script src="js/libs/jquery-3.1.1.min.js"></script>
+
+    <!-- Include AngularJS library -->
+    <script src="js/libs/angular.min.js"></script>
+    <script src="js/libs/angular-route.min.js"></script>
+    <script src="js/script.js"></script>
+    <!-- Include Bootstrap Javascript -->
+    <script src="js/libs/bootstrap.min.js"></script>
+
+</head>
+<body ng-controller="myLoginController">
+<div class="container-fluid">
+    <h3 class="text-center">{{message}}</h3>
+    <form class="login-form" name="loginList"  id="loginForm"  ng-submit="loginSubmitInfo(loginInfo)" >
+        <div class="login-div">
+            <label for="inputUsername"> Username</label>
+            <input type="text" name ="username" class="inputUsername" id="inputUsername"  ng-model="loginInfo.username" required="required">
+        </div>
+        <div class="login-div">
+            <label for="inputPassword"> Password</label>
+            <input type="password" name="password" class="inputPassword" id="inputPassword" ng-model="loginInfo.password" required="required">
+        </div>
+        <div class="login-div">
+        <button class="btn btn-primary" >Submit</button>
+        </div>
+        <div class="alert alert-danger" ng-show="errMsg">{{errMsg}}</div>
+    </form>
+
+
+
+</div>
+</body>
+</html>
